@@ -1,0 +1,20 @@
+{
+  "name": "use-case-1-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tdd": "nodemon --exec mocha --recursive --reporter min --timeout 0 "
+  },
+  "author": "Abel Carhuanca",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "tesseract.js": "^2.1.4"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "email-sender-nodemailer-module",
+  "version": "1.0.0",
+  "description": "email sender module for nodemailer",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "nodemailer": "^6.4.14",
+    "nodemon": "^2.0.6",
+    "should": "^13.2.3",
+    "@sendgrid/mail": "^7.3.0",
+    "mime": "^2.4.6",
+    "nyc": "^15.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  },
+  "scripts": {
+    "tdd": "nodemon --exec mocha --recursive --timeout 0 --reporter min"
+  },
+  "author": "Abel Carhuanca",
+  "license": "ISC"
+}

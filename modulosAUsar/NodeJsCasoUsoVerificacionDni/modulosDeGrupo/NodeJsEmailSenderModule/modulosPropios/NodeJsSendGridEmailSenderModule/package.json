@@ -1,0 +1,29 @@
+{
+  "name": "moduloemailsender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.3.0",
+    "dotenv": "^8.2.0",
+    "mime": "^2.4.6",
+    "nodemailer": "^6.4.14",
+    "nodemon": "^2.0.5",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive --timeout 0",
+    "tdd": "nodemon --exec mocha --recursive --timeout 0 --reporter min",
+    "tdd-cov": "nodemon --exec nyc mocha --recursive",
+    "coverage": " nyc mocha --recursive && nyc report --reporter=lcov"
+  },
+  "author": "Abel Carh",
+  "license": "ISC"
+}
