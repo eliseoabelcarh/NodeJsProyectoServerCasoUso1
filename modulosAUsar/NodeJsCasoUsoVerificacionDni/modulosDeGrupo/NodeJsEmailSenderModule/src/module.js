@@ -4,6 +4,13 @@
 const { crearEmailSenderNodemailer } = require('../src/nodemailer')
 const { crearEmailSenderSendgrid } = require('../src/sendgrid')
 
+/**
+ * https://github.com/eliseoabelcarh/NodeJsEmailSenderModule
+ * @module emailSenderModule
+ *
+ */
+
+
 const crearEmailSender = async function (config) {
     if (!config) {
         throw new Error('se necesita objeto config')

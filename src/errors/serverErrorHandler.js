@@ -1,4 +1,14 @@
 
+/**
+* @typedef STATUS RESPONSES: /api/verificarDni/:id
+* @description Respuestas de Servidor
+* @property {'400'} STATUS INVALID_ARGS - Error en cliente
+* @property {'404'} STATUS NOT_FOUND - Recurso no encontrado
+* @property {'500'} STATUS INTERNAL_ERROR - Error en Servidor
+* @property {'520'} STATUS undefined Otro error
+*/
+
+
 function errorHandler(error, req, res, next) {
     if (error.type === 'INVALID_ARGS') {
         res.status(400)

@@ -3,8 +3,19 @@ const { createTextFromImageReader } = require('../../modulosAUsar/NodeJsReadText
 const mailerFactory = require('./mailerFactory')
 const daoFactory = require('./daoFactory')
 
+/**
+ * @module CUFactory
+ * @requires daoFactory
+ * @requires mailerFactory
+ * @requires verificadorDeIdentidad
+ * @requires emailSenderModule
+ */
 
-
+/**
+  * @function CUFactory
+  * @summary Devuelve un Objeto con Casos de Uso
+  * @returns {Object} CasoDeUso Singleton Instance
+  */
 const CUFactory = (function () {
 
     let instance
@@ -21,8 +32,6 @@ const CUFactory = (function () {
         }
     }
 })()
-
-
 
 const CasosDeUso = {
 

@@ -3,6 +3,17 @@ const { crearEmailSender } = require('../../modulosAUsar/NodeJsEmailSenderModule
 const { getConfig } = require('../configs/mailerConfig')
 
 
+
+/**
+ * @module mailerFactory
+ *
+ */
+
+/**
+* @function mailerFactory
+* @summary Devuelve un Objeto con Mailer
+* @returns {Object} Mailer Singleton Instance
+*/
 const mailerFactory = (function () {
 
     let mailerInstance

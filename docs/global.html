@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="APP-MONGO-SCHEMA-MODEL">APP-MONGO-SCHEMA-MODEL</h4>
+
+
+
+
+<div class="description">
+    Modelo de Datos para Colección Usuarios en MongoDb y en Aplicación
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Id de usuario generado por aplicación</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombres</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">nombres de usuario</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>apellidos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">apellidos de usuario</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">email de usuario</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pathDniFront</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ruta de archivo de imagen Dni en servidor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_models_schemas.js.html">src/models/schemas.js</a>, <a href="src_models_schemas.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ENDPOINT">ENDPOINT</h4>
+
+
+<p class="summary">Se verifica que nombres guardados en base de datos correspondan con la foto del dni guardada en base de datos</p>
+
+
+
+<div class="description">
+    Se envía como params el id del usuario a verificar
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>/api/verificarDni/:id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'POST'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">params: Id del usuario</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_server_routerHandler.js.html">src/server/routerHandler.js</a>, <a href="src_server_routerHandler.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ENDPOINT">ENDPOINT</h4>
+
+
+
+
+<div class="description">
+    Ruta de Prueba a Servidor - Status 200
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>/api/verificarDni</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'GET'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">devuelve mensaje prueba 'ok'</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_server_routerHandler.js.html">src/server/routerHandler.js</a>, <a href="src_server_routerHandler.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="STATUS">STATUS</h4>
+
+
+
+
+<div class="description">
+    Respuestas de Servidor
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>STATUS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'400'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">INVALID_ARGS - Error en cliente</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>STATUS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'404'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">NOT_FOUND - Recurso no encontrado</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>STATUS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'500'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">INTERNAL_ERROR - Error en Servidor</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>STATUS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'520'</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">undefined Otro error</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_errors_serverErrorHandler.js.html">src/errors/serverErrorHandler.js</a>, <a href="src_errors_serverErrorHandler.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-CUFactory.html">CUFactory</a></li><li><a href="module-daoFactory.html">daoFactory</a></li><li><a href="module-emailSenderModule.html">emailSenderModule</a></li><li><a href="module-mailerFactory.html">mailerFactory</a></li><li><a href="module-verificadorDeIdentidad.html">verificadorDeIdentidad</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Nov 18 2020 05:26:30 GMT-0300 (hora estándar de Argentina)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

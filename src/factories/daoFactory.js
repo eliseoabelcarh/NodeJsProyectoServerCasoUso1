@@ -9,6 +9,16 @@ const { typeOfDaoUsuarios } = getConfigDaoUsuarios()
 const configMongo = getConfigDaoMongo()
 
 
+
+/**
+ * @module daoFactory
+ */
+
+/**
+  * @function daoFactory
+  * @summary Devuelve un Objeto con Dao/Db
+  * @returns {Object} Dao Singleton Instance
+  */
 let daoFactory = (function () {
 
     let daoInstance

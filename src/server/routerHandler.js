@@ -9,6 +9,13 @@ function crearRouterHandler() {
 
     router = express.Router()
 
+    /**
+    * @typedef ENDPOINT
+    * @description Se envía como params el id del usuario a verificar
+    * @summary Se verifica que nombres guardados en base de datos 
+    * correspondan con la foto del dni guardada en base de datos 
+    * @property {'POST'} /api/verificarDni/:id params: Id del usuario
+    */
     router.post('/verificarDni/:id', wrap(async (req, res) => {
 
         if (!req.params.id || req.params.id == 'undefined') {
@@ -20,6 +27,12 @@ function crearRouterHandler() {
 
     }))
 
+
+    /**
+    * @typedef ENDPOINT
+    * @description Ruta de Prueba a Servidor - Status 200
+    * @property {'GET'} /api/verificarDni devuelve mensaje prueba 'ok'
+    */
     router.get('/verificarDni', wrap(async (req, res) => {
         res.status(200).send('okay')
     }))

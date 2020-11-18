@@ -1,3 +1,4 @@
+
 function crearErrorDeBaseDeDatos(operacion) {
     const errMsg = 'error de cnx a la base'
     const err = new Error(`${operacion} - ${errMsg}`)

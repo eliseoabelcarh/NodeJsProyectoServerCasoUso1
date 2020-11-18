@@ -1,5 +1,13 @@
 const { tieneNombre, getPathDniFrontFromUser, prepararEmailDeDniVerificado } = require('../models/usuario')
 
+
+/**
+ * https://github.com/eliseoabelcarh/NodeJsReadTextFromImageModule
+ * @module verificadorDeIdentidad
+ *
+ */
+
+
 async function crearVerificadorDeIdentidad(daoUsuarios, lectorDni, emailSender) {
 
 

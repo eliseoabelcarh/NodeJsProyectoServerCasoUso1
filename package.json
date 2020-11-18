@@ -16,10 +16,12 @@
     "tesseract.js": "^2.1.4"
   },
   "devDependencies": {
+    "jsdoc": "^3.6.6",
     "mocha": "^8.2.0"
   },
   "scripts": {
-    "tdd": "nodemon --exec mocha --recursive --timeout 0 --reporter min"
+    "tdd": "nodemon --exec mocha --recursive --timeout 0 --reporter min",
+    "gdocs": "./node_modules/.bin/jsdoc -c D:/ORT/NodeJsProyectoServerCasoUso1/src/configs/docsConfig.json"
   },
   "author": "Abel Carhuanca",
   "license": "ISC"

@@ -5,6 +5,16 @@ const Schema = mongoose.Schema
 
 const userSchemaColection = 'usuarios'
 
+
+/**
+* @typedef APP-MONGO-SCHEMA-MODEL 
+* @description Modelo de Datos para Colección Usuarios en MongoDb y en Aplicación
+* @property {Number} id Id de usuario generado por aplicación
+* @property {String} nombres nombres de usuario
+* @property {String} apellidos apellidos de usuario
+* @property {String} email email de usuario
+* @property {String} pathDniFront ruta de archivo de imagen Dni en servidor
+*/
 const UserSchema = new Schema({
     id: Number,
     nombres: String,
