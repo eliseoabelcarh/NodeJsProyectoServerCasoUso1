@@ -1,10 +1,10 @@
-/* function crearErrorDeBaseDeDatos(operacion) {
+function crearErrorDeBaseDeDatos(operacion) {
     const errMsg = 'error de cnx a la base'
     const err = new Error(`${operacion} - ${errMsg}`)
     err.type = 'INTERNAL_ERROR'
     return err
 }
- */
+
 function crearErrorArgumentosInvalidos(campo, regla) {
     const errMsg = `${campo}: ${regla}`
     const error = new Error(errMsg)
@@ -20,7 +20,7 @@ function crearErrorRecursoNoEncontrado(recurso, id) {
 }
 
 module.exports = {
-    /*  crearErrorDeBaseDeDatos, */
+    crearErrorDeBaseDeDatos,
     crearErrorArgumentosInvalidos,
     crearErrorRecursoNoEncontrado
 }

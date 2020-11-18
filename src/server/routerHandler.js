@@ -10,13 +10,14 @@ function crearRouterHandler() {
     router = express.Router()
 
     router.post('/verificarDni/:id', wrap(async (req, res) => {
+
         if (!req.params.id || req.params.id == 'undefined') {
             throw crearErrorArgumentosInvalidos('id', 'argumento vacío')
         }
-        const id = req.params.id
         const CUVerificarNombres = await CUFactory.getCUVerificarNombresRegistradosEnFotoDni()
-        const respuesta = await CUVerificarNombres.validarInfoEnDbConFotoDni({ userId: id })
+        const respuesta = await CUVerificarNombres.validarInfoEnDbConFotoDni({ userId: req.params.id })
         res.json({ dniVerificado: respuesta })
+
     }))
 
     router.get('/verificarDni', wrap(async (req, res) => {
