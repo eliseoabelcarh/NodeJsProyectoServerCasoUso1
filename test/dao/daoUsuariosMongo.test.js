@@ -26,6 +26,7 @@ const datos2 = {
 describe('TESTS PARA DAO USUARIOS MONGO', () => {
 
     let dao
+
     before(async () => {
         const configMongo = getConfigDaoMongo()
         dao = await daoUsuariosMongo.getInstance(configMongo)
@@ -35,12 +36,10 @@ describe('TESTS PARA DAO USUARIOS MONGO', () => {
     })
 
     describe('agrego usuario a Dao ', async () => {
-
         it('devuelve un id diferente null', async () => {
             const id = await dao.addUser(datos)
             const esDiferenteANull = id !== null
             assert.deepStrictEqual(esDiferenteANull, true)
-
         })
     })
     describe('agrego usuario', async () => {
@@ -48,7 +47,6 @@ describe('TESTS PARA DAO USUARIOS MONGO', () => {
             await dao.addUser(datos)
             const usuarios = await dao.getAll()
             assert.deepStrictEqual(usuarios.length, 1)
-
         })
     })
     describe('elimino toda la base de datos', async () => {
@@ -58,7 +56,6 @@ describe('TESTS PARA DAO USUARIOS MONGO', () => {
             await dao.cleanAll()
             const usuarios = await dao.getAll()
             assert.deepStrictEqual(usuarios.length, 0)
-
         })
     })
     describe('busco usuario x id', async () => {
@@ -67,10 +64,8 @@ describe('TESTS PARA DAO USUARIOS MONGO', () => {
             const user = await dao.getUserById(id)
             console.log('user enciontradioo ', user)
             assert.deepStrictEqual(user, datos)
-
         })
     })
-
     describe('busco usuario x id que no existe', async () => {
         it('devuelve mensaje esperado', async () => {
             await dao.addUser(datos)
@@ -80,7 +75,6 @@ describe('TESTS PARA DAO USUARIOS MONGO', () => {
                 assert.deepStrictEqual("no se encontró 'usuario' con id: 8", error.message)
                 return true
             })
-
         })
     })
 })

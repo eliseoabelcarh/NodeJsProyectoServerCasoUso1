@@ -23,10 +23,8 @@ describe('TEST PARA SERVER Y CASO DE USO', async () => {
     })
 
     describe('verifico que ruta Api del server anda bien', async () => {
-
         it('devuelve status 200 y mensaje okay', async () => {
-
-            const respuesta = await clienteRest.probandoGet()
+            const respuesta = await clienteRest.get()
             assert.deepStrictEqual(200, respuesta.status)
             assert.deepStrictEqual('okay', respuesta.data)
         })

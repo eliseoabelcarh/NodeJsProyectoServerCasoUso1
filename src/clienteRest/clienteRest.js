@@ -1,14 +1,11 @@
 const axios = require('axios').default
 
-
-
-
 function crearClienteRest(port) {
     return {
         verificarDniById: async (id) => {
             return await sendRequest({ url: crearURLBase(port) + `/verificardni/${id}`, method: 'post' })
         },
-        probandoGet: async () => {
+        get: async () => {
             return await sendRequest({ url: crearURLBase(port) + `/verificardni`, method: 'get' })
         }
     }

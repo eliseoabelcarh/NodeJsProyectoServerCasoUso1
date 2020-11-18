@@ -24,7 +24,6 @@ let daoUsuariosMongo = (function () {
                 await conectar(config)
                 const idBuscado = Number.parseInt(id)
                 const userMongo = await UserModelMongoose.findOne({ id: idBuscado }).exec();
-                console.log('encontradoo ', userMongo)
                 if (!userMongo) {
                     throw crearErrorRecursoNoEncontrado('usuario', idBuscado)
                 }
@@ -43,7 +42,6 @@ let daoUsuariosMongo = (function () {
             cleanAll: async () => {
                 await conectar(config)
                 const res = await UserModelMongoose.deleteMany({});
-                console.log('Cant elementos borrados: ', res.deletedCount)
                 await desconectar()
             }
         }

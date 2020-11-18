@@ -12,7 +12,6 @@ describe('TEST PARA MAILER FACTORY ', async () => {
     })
 
     describe('---------CON adjuntos', async () => {
-
         describe('envío mail de prueba con adjuntos por defecto nodemailer', async () => {
             it('envía mail y devuelve esperado', async () => {
                 const mail = {

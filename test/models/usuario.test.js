@@ -26,6 +26,4 @@ describe(' TEST PARA MODELO USUARIO.JS', async () => {
 
         })
     })
-
-
 })

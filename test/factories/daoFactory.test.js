@@ -3,7 +3,9 @@ const assert = require('assert')
 const daoFactory = require('../../src/factories/daoFactory')
 
 describe('TESTS PARA DAO USUARIOS MEMORIA', async () => {
+
     let dao
+
     before(async () => {
         dao = await daoFactory.getDao()
     })
@@ -12,7 +14,6 @@ describe('TESTS PARA DAO USUARIOS MEMORIA', async () => {
     })
 
     describe('agrego usuario con DAO FACTORY ', async () => {
-
         it('devuelve un id diferente null', async () => {
             const datos = {
                 nombres: 'algunNombre',

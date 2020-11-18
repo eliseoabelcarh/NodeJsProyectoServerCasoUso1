@@ -2,6 +2,7 @@ const { crearErrorRecursoNoEncontrado } = require('../errors/apiError')
 const { crearModeloUsuario } = require('../models/usuario')
 
 let daoUsuariosMemoria = (function () {
+
     let objInstance
     let elementos = []
 
@@ -20,7 +21,6 @@ let daoUsuariosMemoria = (function () {
                     throw crearErrorRecursoNoEncontrado('usuario', idBuscado)
                 }
                 return arrayData[0]
-
             },
             getAll: async () => {
                 return elementos

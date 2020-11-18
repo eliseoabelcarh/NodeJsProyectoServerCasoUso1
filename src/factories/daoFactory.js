@@ -4,8 +4,8 @@ const daoUsuariosMemoria = require('../dao/daoUsuariosMemoria')
 const daoUsuariosMongo = require('../dao/daoUsuariosMongo')
 const { getConfigDaoMongo } = require('../configs/daoMongoConfig')
 
-const { typeOfDaoUsuarios } = getConfigDaoUsuarios()
 
+const { typeOfDaoUsuarios } = getConfigDaoUsuarios()
 const configMongo = getConfigDaoMongo()
 
 
