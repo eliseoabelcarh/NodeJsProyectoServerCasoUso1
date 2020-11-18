@@ -2,6 +2,18 @@
 const { crearErrorArgumentosInvalidos } = require('../errors/apiError')
 let lastId = 0
 
+
+const crearArrayDeModeloUsuarios = (array) => {
+
+    let collection = []
+    for (const usuarioModel of array) {
+        const user = crearModeloUsuario(usuarioModel)
+        collection.push(user)
+    }
+    return collection
+}
+
+
 const crearModeloUsuario = (datos) => {
     let usuario = {}
     if (!datos) {
@@ -106,8 +118,13 @@ function compararStrings(a, b) {
     return (a.toUpperCase() === b.toUpperCase())
 }
 
+
+
 module.exports = {
-    crearModeloUsuario, tieneNombre,
+    crearModeloUsuario,
+    tieneNombre,
     getPathDniFrontFromUser,
-    getNombresFromUser, prepararEmailDeDniVerificado
+    getNombresFromUser,
+    prepararEmailDeDniVerificado,
+    crearArrayDeModeloUsuarios
 }

@@ -1,5 +1,5 @@
 const { crearErrorRecursoNoEncontrado, crearErrorDeBaseDeDatos } = require('../errors/apiError')
-const { crearModeloUsuario } = require('../models/usuario')
+const { crearModeloUsuario, crearArrayDeModeloUsuarios } = require('../models/usuario')
 const mongoose = require('mongoose');
 const { UserModelMongoose } = require('../models/schemas')
 
@@ -8,7 +8,6 @@ const { UserModelMongoose } = require('../models/schemas')
 let daoUsuariosMongo = (function () {
 
     let objInstance
-    let elementos = []
 
     async function create(config) {
 
@@ -17,32 +16,35 @@ let daoUsuariosMongo = (function () {
                 await conectar(config)
                 const usuarioCreado = crearModeloUsuario(datos)
                 const user = new UserModelMongoose(usuarioCreado)
-                console.log('devuee por mongog ', user)
                 await user.save()
-                desconectar()
+                await desconectar()
                 return user.id
             },
             getUserById: async (id) => {
+                await conectar(config)
                 const idBuscado = Number.parseInt(id)
-                const arrayData = elementos.filter(e => e.id === idBuscado)
-                if (!(arrayData.length)) {
+                const userMongo = await UserModelMongoose.findOne({ id: idBuscado }).exec();
+                console.log('encontradoo ', userMongo)
+                if (!userMongo) {
                     throw crearErrorRecursoNoEncontrado('usuario', idBuscado)
                 }
-                return arrayData[0]
+                const usuario = crearModeloUsuario(userMongo)
+                await desconectar()
+                return usuario
 
             },
             getAll: async () => {
                 await conectar(config)
-                const res = await UserModelMongoose.find({});
-                console.log('getALll  ', res)
-                desconectar()
-                return res
+                const datos = await UserModelMongoose.find({});
+                const usuarios = crearArrayDeModeloUsuarios(datos)
+                await desconectar()
+                return usuarios
             },
             cleanAll: async () => {
                 await conectar(config)
                 const res = await UserModelMongoose.deleteMany({});
-                console.log('borroooo ', res)
-                desconectar()
+                console.log('Cant elementos borrados: ', res.deletedCount)
+                await desconectar()
             }
         }
     }
@@ -67,13 +69,14 @@ async function conectar(config) {
             useFindAndModify: false,
             useCreateIndex: true
         })
-        console.log('...conectado a Mongo!')
+        console.log('...conectado a BD!')
     } catch (error) {
         throw crearErrorDeBaseDeDatos(error.message)
     }
 }
 async function desconectar() {
-    mongoose.connection.close()
+    console.log('...desconectando BD')
+    await mongoose.connection.close()
 }
 
 module.exports = daoUsuariosMongo
