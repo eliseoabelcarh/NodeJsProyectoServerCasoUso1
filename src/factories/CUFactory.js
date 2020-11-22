@@ -35,13 +35,13 @@ const CUFactory = (function () {
 
 const CasosDeUso = {
 
-    getCUVerificarNombresRegistradosEnFotoDni: (async () => {
+    getCUVerificarNombresRegistradosEnFotoDni: async () => {
         const dao = await daoFactory.getDao()
         const lectorDni = await createTextFromImageReader()
         const mailer = await mailerFactory.getMailer()
         const verificador = await crearVerificadorDeIdentidad(dao, lectorDni, mailer)
         return verificador
-    })
+    }
 }
 
 module.exports = CUFactory.getInstance()
